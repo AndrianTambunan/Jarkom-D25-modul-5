@@ -282,11 +282,18 @@ iptables -A INPUT -p tcp --dport 80 -j DROP
 ## No.7
 Karena terdapat 2 WebServer, kalian diminta agar setiap client yang mengakses Sein dengan Port 80 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan dan request dari client yang mengakses Stark dengan port 443 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan.
 ```
+iptables -A PREROUTING -t nat -p tcp --dport 80 -d 10.34.8.2 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 10.34.8.2
+iptables -A PREROUTING -t nat -p tcp --dport 80 -d 10.34.8.2 -j DNAT --to-destination 10.34.14.142
+
+iptables -A PREROUTING -t nat -p tcp --dport 443 -d 10.34.142 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 10.34.14.142
+iptables -A PREROUTING -t nat -p tcp --dport 443 -d 10.34.14.142 -j DNAT --to-destination 10.34.8.2
+
 ```
 
 ## No.8
 Karena berbeda koalisi politik, maka subnet dengan masyarakat yang berada pada Revolte dilarang keras mengakses WebServer hingga masa pencoblosan pemilu kepala suku 2024 berakhir. Masa pemilu (hingga pemungutan dan penghitungan suara selesai) kepala suku bersamaan dengan masa pemilu Presiden dan Wakil Presiden Indonesia 2024.
 ```
+iptables -A INPUT -p tcp --dport 80 -m time --datestart 2024-02-14T00:00:00 --datestop 2024-03-20T23:59:59 -j DROP
 ```
 
 ## No 9
