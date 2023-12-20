@@ -9,7 +9,7 @@
 ![image](https://github.com/AndrianTambunan/Jarkom-D25-modul-5/blob/main/subnet.png)
 - Rute
 | Subnet | Rute | Jumlah IP | Netmask |
-| ---------------- | --------------- | --------- | -------- |
+| -------- | ------ | --------- | -------- |
 | A1 | Fern-Switch2-Revolte | 2 | /30 |
 | A2 | Fern-Richter | 2 | /30 | 
 | A3 | Fern - Himmel - Switch1 - SchwerMountains | 66 | /25 |
