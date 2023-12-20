@@ -20,7 +20,7 @@
 | A8 | Aura - Heiter | 2 | /30 |
 | A9 | Heiter - TurkRegion | 1023 | /21 |
 | A10 | Heiter - Switch3 - Sein - GrobeForest | 514 | /22 |
-| Total IP |  | 1871 | /20 |
+| Total IP | - | 1871 | /20 |
 
 - Pembagian Subnet VLSM
   ![image](https://github.com/AndrianTambunan/Jarkom-D25-modul-5/blob/main/vlsm.png)
