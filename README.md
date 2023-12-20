@@ -34,10 +34,42 @@ Setelah pandai mengatur jalur-jalur khusus, kalian diminta untuk membantu North 
 
 ## Routing
 - Aura
+```
+ up route add -net 10.34.14.128 netmask 255.255.255.252 gw 10.34.14.146
+ up route add -net 10.34.14.132 netmask 255.255.255.252 gw 10.34.14.146
+ up route add -net 10.34.14.0 netmask 255.255.255.128 gw 10.34.14.146
+ up route add -net 10.34.12.0 netmask 255.255.254.0 gw 10.34.14.146
+ up route add -net 10.34.14.136 netmask 255.255.255.252 gw 10.34.14.146
+ up route add -net 10.34.14.140 netmask 255.255.255.252 gw 10.34.14.146
+ up route add -net 10.34.14.144 netmask 255.255.255.252 gw 10.34.14.146
+ up route add -net 10.34.0.0 netmask 255.255.248.0 gw 10.34.14.150
+ up route add -net 10.34.8.0 netmask 255.255.252.0 gw 10.34.14.150
+ up route add -net 10.34.14.148 netmask 255.255.255.252 gw 10.34.14.150
+```
 - Heiter
+```
+ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.14.149
+```
 - Frieren
+```
+ up route add -net 10.34.14.128 netmask 255.255.255.252 gw 10.34.14.138
+ up route add -net 10.34.14.132 netmask 255.255.255.252 gw 10.34.14.138
+ up route add -net 10.34.14.136 netmask 255.255.255.252 gw 10.34.14.138
+ up route add -net 10.34.14.0 netmask 255.255.255.128 gw 10.34.14.138
+ up route add -net 10.34.12.0 netmask 255.255.255.0 gw 10.34.14.138
+ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.14.145
+```
 - Himmel
+```
+ up route add -net 10.34.14.0 netmask 255.255.255.128 gw 10.34.14.2
+ up route add -net 10.34.14.128 netmask 255.255.255.252 gw 10.34.14.2
+ up route add -net 10.34.14.132 netmask 255.255.255.252 gw 10.34.14.2
+ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.14.137
+```
 - Fern
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.14.1
+```
 
 ## Konfigurasi
 - DHCP Server (Revolte)
