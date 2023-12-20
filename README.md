@@ -47,7 +47,7 @@ Setelah pandai mengatur jalur-jalur khusus, kalian diminta untuk membantu North 
 ## No.1
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE. kita akan memasukkan codingan ini di node `Aura`
 ```
-
+iptables -t nat -A POSTROUTING -s 10.34.0.0/16 -o eth0 -j SNAT --to-s 192.168.122.1
 ```
 
 ## No.2
@@ -78,7 +78,7 @@ iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 ## No 4
 Lakukan pembatasan sehingga koneksi SSH pada Web Server hanya dapat dilakukan oleh masyarakat yang berada pada GrobeForest.
 ```
-iptables -A INPUT -p tcp --dport 22 -s 10.10.8.0/22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -s 10.34.8.0/22 -j ACCEPT
 
 iptables -A INPUT -p tcp --dport 22 -j REJECT
 ```
@@ -99,20 +99,6 @@ iptables -A INPUT -p tcp --dport 80 -m time --timestart 13:01 --timestop 10:59 -
 iptables -A INPUT -p tcp --dport 80 -m time --timestart 12:00 --timestop 13:00 --weekdays Mon,Tue,Wed,Thu -j DROP
 iptables -A INPUT -p tcp --dport 80 -m time --timestart 11:00 --timestop 13:00 --weekdays Fri -j DROP
 iptables -A INPUT -p tcp --dport 80 -j DROP
-```
-atau jalankan
-```
-bash no6.sh
-```
-Lalu, lakukan testing di client (saya run di TurkRegion) dengan mengubah tanggalnya terlebih dahulu
-```
-nmap 10.36.8.2
-nmap 10.36.14.142
-```
-atau jalankan
-```
-bash no6a.sh
-bash no6b.sh
 ```
 
 ## No.7
