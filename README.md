@@ -21,7 +21,7 @@
 | A8 | Aura - Heiter | 2 | /30 |
 | A9 | Heiter - TurkRegion | 1023 | /21 |
 | A10 | Heiter - Switch3 - Sein - GrobeForest | 514 | /22 |
-| Total | - | 1871 | /20 |
+| Total |  | 1871 | /20 |
 
 - Pembagian Subnet VLSM
   
