@@ -72,10 +72,156 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.14.1
 ```
 
 ## Konfigurasi
-- DHCP Server (Revolte)
-- DHCP Relay (Fern - Heiter - Himmel - Aura - Frieren)
-- DNS Server (Richter)
+- DHCP Relay (Aura)
+```
+ auto eth0
+ iface eth0 inet dhcp
 
+ auto eth1
+ iface eth1 inet static
+ 	address 10.34.14.149
+ 	netmask 255.255.255.252
+
+ auto eth2
+ iface eth2 inet static
+ 	address 10.34.14.145
+ 	netmask 255.255.255.252
+```
+
+- DHCP Server (Revolte)
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.130
+ 	netmask 255.255.255.252
+ 	gateway 10.34.14.129
+
+ up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+- DNS Server (Richter)
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.134
+ 	netmask 255.255.255.252
+ 	gateway 10.34.14.133
+
+ up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+- Web Server (Stark)
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.142
+ 	netmask 255.255.255.252
+ 	gateway 10.34.14.141
+
+ up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+- Web Server (Sein)
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.8.2
+ 	netmask 255.255.252.0
+  gateway 10.34.8.1
+
+ up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+- Heiter
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.150
+ 	netmask 255.255.255.252
+ 	gateway 10.10.14.149
+
+ auto eth1
+ iface eth1 inet static
+ 	address 10.34.8.1
+ 	netmask 255.255.252.0
+
+ auto eth2
+ iface eth2 inet static
+ 	address 10.34.0.1
+ 	netmask 255.255.248.0
+```
+- Himmel
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.138
+ 	netmask 255.255.255.252
+ 	gateway 10.34.14.137
+
+ auto eth1
+ iface eth1 inet static
+ 	address 10.34.14.1
+ 	netmask 255.255.255.128
+
+ auto eth2
+ iface eth2 inet static
+ 	address 10.34.12.1
+ 	netmask 255.255.254.0
+```
+- Frieren
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.146
+ 	netmask 255.255.255.252
+ 	gateway 10.34.14.145
+
+ auto eth1
+ iface eth1 inet static
+ 	address 10.34.14.137
+ 	netmask 255.255.255.252
+
+ auto eth2
+ iface eth2 inet static
+ 	address 10.34.14.141
+ 	netmask 255.255.255.252
+```
+- Fern
+```
+ auto eth0
+ iface eth0 inet static
+ 	address 10.34.14.2
+ 	netmask 255.255.255.128
+ 	gateway 10.34.14.1
+
+ auto eth1
+ iface eth1 inet static
+ 	address 10.34.14.129
+ 	netmask 255.255.255.252
+
+ auto eth2
+ iface eth2 inet static
+ 	address 10.34.14.133
+ 	netmask 255.255.255.252
+```
+- TurkRegion
+```
+ auto eth0
+ iface eth0 inet dhcp
+```
+- SchwerMountains
+```
+ auto eth0
+ iface eth0 inet dhcp
+```
+- LaubHills
+```
+ auto eth0
+ iface eth0 inet dhcp
+```
+- GrobeForest
+```
+ auto eth0
+ iface eth0 inet dhcp
+```
 ## No.1
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE. kita akan memasukkan codingan ini di node `Aura`
 ```
